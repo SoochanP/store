@@ -21,7 +21,7 @@
 		alert(msg);
 	}
 </script>
-    
+    깃테스트중
     
         <!-- Navigation-->
 <%@ include file = "./plug/nav.jsp" %>

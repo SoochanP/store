@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myproject.shop.mappers.adminMapper">
+
+	<!-- 카테고리  호출-->
+	<select id="category" resultType="com.myproject.shop.entity.CategoryEntity">
+		select * from shop.goods_category order by cateCode
+	</select>
+	<!-- 상품 등록 -->
+	<insert id="register">
+		 insert into goods (gdsName, cateCode, gdsPrice, gdsStock, gdsDes, gdsDate)
+		     values (#{gdsName}, #{cateCode}, #{gdsPrice}, #{gdsStock}, #{gdsDes}, now())
+	</insert>
+</mapper >

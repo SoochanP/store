@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myproject.shop.mappers.memberMapper">
+
+	<!-- 회원 가입 -->
+	<insert id="joinUs"  parameterType="com.myproject.shop.entity.MemberEntity">
+		 insert into member (userId, userPass, userName, userPhone)
+			  values (#{userId}, #{userPass}, #{userName}, #{userPhone}); 
+	</insert>
+		
+	<!-- 로그인 처리 -->
+	<select id="login" resultType="com.myproject.shop.domain.MemberDTO">
+		select 
+			*
+ 		from 
+ 			member  
+ 		where userId = #{userId}; 
+	</select>
+	
+	
+</mapper >
